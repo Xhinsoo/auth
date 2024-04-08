@@ -59,6 +59,7 @@ app.post("/login", async (req, res) => {
 
 app.post("/logout", (req, res) => {
   req.session.user_id = null; //set user id to null
+  // req.session.destroy() //destroys the entire session
   res.redirect("/login");
 });
 app.get("/secret", (req, res) => {
